@@ -9,22 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var networkManager = NetworkManager()
-    @State var weather:[FiveDaysResponse]? = NetworkManager().fivedaysResponse
     
     var body: some View {
-        if weather != nil{
+        if networkManager.todaysResponse != nil || networkManager.fivedaysResponse != nil{
             VStack{
-                CurrentWeatherView(current: networkManager.fivedaysResponse)
+                TodayWeatherView()
                 FivedaysWeatherView()
             }
         }else{
             LoadingView()
                 .task {
-                    NetworkManager()
+                    networkManager.loadToday()
+                    networkManager.loadFiveDays()
                 }
         }
+// }
+        
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

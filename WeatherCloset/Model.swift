@@ -7,46 +7,48 @@
 
 import Foundation
 
+struct TodayResponse: Decodable {
+    var coord: CoordinatesResponse
+    var weather: [WeatherResponse]
+    var main: MainResponse
+    var name: String
+    var wind: WindResponse
+    var dt:Double
+    var sys: SystemResponse
+    
+    struct CoordinatesResponse: Decodable {
+        var lon: Double
+        var lat: Double
+    }
+    
+    struct WeatherResponse: Decodable {
+        var id: Double
+        var main: String
+        var description: String
+        var icon: String
+    }
+    
+    struct MainResponse: Decodable {
+        var temp: Double
+        var feels_like: Double
+        var temp_min: Double
+        var temp_max: Double
+        var pressure: Double
+        var humidity: Double
+    }
+    
+    struct WindResponse: Decodable {
+        var speed: Double
+        var deg: Double
+    }
+    
+    struct SystemResponse :Decodable{
+        var   country: String
+        var      sunrise: Int
+        var      sunset: Int
+    }
+}
 
-//struct CurrentResponse: Decodable {
-//    var coord: CoordinatesResponse
-//    var weather: [WeatherResponse]
-//    var main: MainResponse
-//    var name: String
-//    var wind: WindResponse
-//
-//    struct CoordinatesResponse: Decodable {
-//        var lon: Double
-//        var lat: Double
-//    }
-//
-//    struct WeatherResponse: Decodable {
-//        var id: Double
-//        var main: String
-//        var description: String
-//        var icon: String
-//    }
-//
-//    struct MainResponse: Decodable {
-//        var temp: Double
-//        var feels_like: Double
-//        var temp_min: Double
-//        var temp_max: Double
-//        var pressure: Double
-//        var humidity: Double
-//    }
-//    
-//    struct WindResponse: Decodable {
-//        var speed: Double
-//        var deg: Double
-//    }
-//}
-
-//extension ResponseBody.MainResponse {
-//    var feelsLike: Double { return feels_like }
-//    var tempMin: Double { return temp_min }
-//    var tempMax: Double { return temp_max }
-//}
 
 
 struct FiveDaysResponse : Decodable {
@@ -55,11 +57,12 @@ struct FiveDaysResponse : Decodable {
     var city : CityResponse
     
     struct ThreeHoursResponse: Decodable{
-        var dt: Int
+        var dt: Double
         var main : ThreeHoursMain
         var weather : [ThreeHoursWeather]
         var clouds : ThreeHoursClouds
         var wind : ThreeHoursWind
+        var pop :Double
         var sys : ThreeHoursSys
         var dt_txt : String
         
