@@ -44,8 +44,8 @@ struct TodayResponse: Decodable {
     
     struct SystemResponse :Decodable{
         var   country: String
-        var      sunrise: Int
-        var      sunset: Int
+        var      sunrise: Double
+        var      sunset: Double
     }
 }
 
@@ -111,4 +111,11 @@ struct FiveDaysResponse : Decodable {
         }
     }
     
+}
+
+struct ClothesResponse :Codable,Hashable{
+    var name :String
+    var icon :String
+    var url : String
+    var level : [String]
 }

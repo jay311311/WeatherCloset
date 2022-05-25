@@ -12,20 +12,25 @@ struct ContentView: View {
     
     var body: some View {
         if networkManager.todaysResponse != nil || networkManager.fivedaysResponse != nil{
-            VStack{
-                TodayWeatherView()
-                FivedaysWeatherView()
-            }
+           
+                ZStack(alignment: .top){
+                    TodayWeatherView()
+                        .zIndex(1)
+                    
+                    FivedaysWeatherView()
+                }.frame( maxWidth: .infinity,  maxHeight: .infinity, alignment: .top)
         }else{
             LoadingView()
                 .task {
                     networkManager.loadToday()
                     networkManager.loadFiveDays()
+
                 }
         }
-// }
+        // }
         
     }
+    
 }
 
 

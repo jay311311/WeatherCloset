@@ -7,8 +7,6 @@
 import Foundation
 
 class TodayViewModel{
-
-        
     func toInt ( _ numbers :Double) -> Int {
         return Int(numbers)
     }
@@ -16,18 +14,18 @@ class TodayViewModel{
     func getTemp (temp :Double) -> Int {
         let tempRound = lround(temp)
         return tempRound
-        
     }
-   
+    
     func getCurrentTime(time :Double) -> String{
         let current = Date(timeIntervalSince1970: time).toStringKST(dateFormat: "yyyy.MM.dd HH:mm")
-        
         return current
-        
     }
-
     
-   
+    func getSunRiseSet(time :Double) -> String{
+        let current = Date(timeIntervalSince1970: time).toStringKST(dateFormat: "a  H:mm")
+        return current
+    }
+    
     func getSymbol(weather :[TodayResponse.WeatherResponse]) -> String{
         switch weather[0].id {
         case 200...299:
@@ -56,21 +54,20 @@ class TodayViewModel{
             return "questionmark"
         }
     }
-    
-    
 }
-
 
 extension Date{
     func toStringKST( dateFormat format: String ) -> String {
         let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = format
-                dateFormatter.timeZone = TimeZone.autoupdatingCurrent
-                dateFormatter.locale = Locale.current
-                return dateFormatter.string(from: self)
+        dateFormatter.dateFormat = format
+        dateFormatter.timeZone = TimeZone.autoupdatingCurrent
+        dateFormatter.locale = Locale.current
+        dateFormatter.amSymbol = "am"
+        dateFormatter.pmSymbol = "pm"
+        return dateFormatter.string(from: self)
     }
-          
-        }
+    
+}
 
 
 
