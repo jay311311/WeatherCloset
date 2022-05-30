@@ -114,8 +114,8 @@ struct FiveDaysResponse : Decodable {
 }
 
 struct ClothesResponse :Codable,Hashable{
-    var name :String
-    var icon :String
+    var name : String
+    var icon : String
     var url : String
     var level : [String]
 }

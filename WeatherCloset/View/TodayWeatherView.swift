@@ -15,7 +15,7 @@ struct TodayWeatherView: View {
     
     var body: some View {
         if let today = networkManager.todaysResponse?.first, let clothes = clothesManager.clothesResponse{
-           var temp  = todayViewModel.getTemp(temp: today.main.temp)
+            let temp  = todayViewModel.getTemp(temp: today.main.temp)
             VStack(spacing:40){
                 VStack{
                     HStack( spacing: 20){

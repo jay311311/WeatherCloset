@@ -19,34 +19,21 @@ class ClothesViewModel:ObservableObject{
     
     func filterClothes(_ clotehs :[ClothesResponse],_ temp: Int) -> [ClothesResponse]  {
         for item in  clotehs{
-            switch item.level{
-            case _ where item.level.contains("VHot"):
-                 VeryHot.append(item)
-            case _ where item.level.contains("Hot"):
-                Hot.append(item)
-            case _ where item.level.contains("LHot"):
-                LittleHot.append(item)
-            case _ where item.level.contains("Nice"):
-                Nice.append(item)
-            case _ where item.level.contains("Warm"):
-                Warm.append(item)
-            case _ where item.level.contains("LCold"):
-                LittleCold.append(item)
-            case _ where item.level.contains("Cold"):
-                Cold.append(item)
-            case _ where item.level.contains("VCold"):
-                VeryCold.append(item)
-                
-            default:
-             print("nothong")
-            }
-            
+            if item.level.contains("VHot"){ VeryHot.append(item) }
+            if item.level.contains("Hot"){ Hot.append(item) }
+            if item.level.contains("LHot"){ LittleHot.append(item) }
+            if item.level.contains("Nice"){ Nice.append(item) }
+            if item.level.contains("Warm"){ Warm.append(item) }
+            if item.level.contains("LCold"){ LittleCold.append(item) }
+            if item.level.contains("Cold"){ Cold.append(item) }
+            if item.level.contains("VCold"){ VeryCold.append(item) }
         }
         let result = tempStandard(temp)!
         print("어떻게 만들어 졌니\(result)")
         return result
         
     }
+    
     func tempStandard(_ temp:Int) -> [ClothesResponse]?{
         switch temp{
         case 28... : return VeryHot
