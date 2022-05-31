@@ -8,30 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var networkManager = NetworkManager()
+    @ObservedObject var weatherManager = WeatherManager()
     
     var body: some View {
-        if networkManager.todaysResponse != nil || networkManager.fivedaysResponse != nil{
-           
-                ZStack(alignment: .top){
-                    TodayWeatherView()
-                        .zIndex(1)
-                    
-                    FivedaysWeatherView()
-                }.frame( maxWidth: .infinity,  maxHeight: .infinity, alignment: .top)
-        }else{
-            LoadingView()
-                .task {
-                    networkManager.loadToday()
-                    networkManager.loadFiveDays()
-
-                }
-        }
-        // }
-        
+       
+            
+            ZStack(alignment: .top){
+                TodayWeatherView()
+                    .zIndex(1)
+                
+                FivedaysWeatherView()
+            }.frame( maxWidth: .infinity,  maxHeight: .infinity, alignment: .top)
+      
     }
     
 }
+    // }
+    
+
+
+
 
 
 struct ContentView_Previews: PreviewProvider {

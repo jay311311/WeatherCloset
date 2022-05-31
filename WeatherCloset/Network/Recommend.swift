@@ -10,8 +10,6 @@ import Foundation
 
 class ClothesManager:ObservableObject {
     @Published var clothesResponse : [ClothesResponse]? = []
-
-    
      init () {
         var filename :String = "ClothesData.json"
         guard let file =  Bundle.main.url(forResource: filename, withExtension: nil)

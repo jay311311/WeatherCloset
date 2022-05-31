@@ -9,12 +9,14 @@ import SwiftUI
 
 struct TodayWeatherView: View {
     @ObservedObject var clothesManager = ClothesManager()
-    @ObservedObject var networkManager = NetworkManager()
+    @ObservedObject var weatherManager = WeatherManager()
+//    @ObservedObject var locationManager = LocationManager()
+
     var todayViewModel = TodayViewModel()
     var clothesViewModel = ClothesViewModel()
     
     var body: some View {
-        if let today = networkManager.todaysResponse?.first, let clothes = clothesManager.clothesResponse{
+        if let today = weatherManager.todaysResponse?.first, let clothes = clothesManager.clothesResponse{
             let temp  = todayViewModel.getTemp(temp: today.main.temp)
             VStack(spacing:40){
                 VStack{
@@ -57,9 +59,10 @@ struct TodayWeatherView: View {
             .background(LinearGradient(gradient:Gradient(colors: [Color("custmBlue"),Color("custmMPurple"),Color("custmPurple")]) , startPoint: .topLeading, endPoint: .bottomTrailing))
         }else{
             LoadingView().task {
-                networkManager.loadToday()
                
+                weatherManager.loadToday()
             }
+            
         }
     }
     

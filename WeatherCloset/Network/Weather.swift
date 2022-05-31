@@ -9,9 +9,12 @@ import Foundation
 import CoreLocation
 
 @available(iOS 13.0, *)
-class NetworkManager:ObservableObject {
+class WeatherManager:ObservableObject {
     @Published var fivedaysResponse:[FiveDaysResponse]? = []
     @Published var todaysResponse:[TodayResponse]? = []
+    
+    let lat = LocationManager().latitude
+    let long  = LocationManager().longitude
     
     func loadFiveDays() {
         //  print("시작했나?")
@@ -20,7 +23,9 @@ class NetworkManager:ObservableObject {
     }
     
     func loadToday(){
-        loadData(url:"https://api.openweathermap.org/data/2.5/weather?lat=35.046329&lon=129.108063&appid=e71e68187e6da07eb17db48a8cf2dc1b&units=metric")
+        guard let latitude = lat , let longitude = long else { return }
+//        print("lat : \(coordnate.latitude), long : \(coordnate.longitude)")
+        loadData(url:"https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=e71e68187e6da07eb17db48a8cf2dc1b&units=metric")
     }
     
     func loadData(url:String ){
