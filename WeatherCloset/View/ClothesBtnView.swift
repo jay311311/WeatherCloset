@@ -27,7 +27,8 @@ struct ClothesBtnView: View {
                     }
                 }
             }
-            .padding(.horizontal,20)
+            .padding(15)
+            
         }
     }
 }

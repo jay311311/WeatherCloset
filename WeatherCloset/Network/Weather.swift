@@ -17,8 +17,8 @@ class WeatherManager:ObservableObject {
     let long  = LocationManager().longitude
     
     func loadFiveDays() {
-        //  print("시작했나?")
-        loadData(url:"https://api.openweathermap.org/data/2.5/forecast?lat=35.046329&lon=129.108063&appid=e71e68187e6da07eb17db48a8cf2dc1b&units=metric&cnt=24")
+        guard let latitude = lat , let longitude = long else { return }
+        loadData(url:"https://api.openweathermap.org/data/2.5/forecast?lat=\(latitude)&lon=\(longitude)&appid=e71e68187e6da07eb17db48a8cf2dc1b&units=metric&cnt=24")
 
     }
     
@@ -39,10 +39,12 @@ class WeatherManager:ObservableObject {
                     DispatchQueue.main.async { [weak self] in
                         self?.todaysResponse = [result]
                     }
-                }else if url.pathComponents.contains("forecast"){
+                }
+                if url.pathComponents.contains("forecast"){
                     let result = try JSONDecoder().decode(FiveDaysResponse.self, from: data)
                     DispatchQueue.main.async { [weak self] in
                         self?.fivedaysResponse = [result]
+                        print(self?.fivedaysResponse?.first)
                     }
                 }
             } catch {

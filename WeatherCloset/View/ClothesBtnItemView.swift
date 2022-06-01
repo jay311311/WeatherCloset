@@ -26,12 +26,18 @@ struct ClothesBtnItem: View {
                     .padding(10)
                 
             }
-            .sheet(isPresented: self.$showModal) {
-                ModalView(urlToLoad: item.url)
+            .sheet(isPresented: self.$showModal, onDismiss: {
+                // 에러 수정예정
+//                didMiss
+//                self.showModal = false
+//                print("이제뭐니?: \(showModal)"
+//                )
+            }) {
+                ModalView(urlToLoad: item.url, isPresented: $showModal)
             }
             Text("\(item.name)")
                 .font(.subheadline)
-                .padding(.horizontal ,10)
+                .padding(.horizontal ,20)
         }
         
     }

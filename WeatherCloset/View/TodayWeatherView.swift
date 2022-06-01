@@ -10,7 +10,7 @@ import SwiftUI
 struct TodayWeatherView: View {
     @ObservedObject var clothesManager = ClothesManager()
     @ObservedObject var weatherManager = WeatherManager()
-
+    
     var todayViewModel = TodayViewModel()
     var clothesViewModel = ClothesViewModel()
     
@@ -29,38 +29,34 @@ struct TodayWeatherView: View {
                     }
                     .padding(.top,15)
                     Text("\(todayViewModel.getCurrentTime(time:today.dt))기준")
-                    .font(.caption)
+                        .font(.caption)
                 }
                 HStack(alignment: .top,spacing: 140){
                     VStack(alignment: .leading){
-                        Image(systemName: todayViewModel.getSymbol(weather: today.weather))
+                        Image(systemName: todayViewModel.getSymbol(today.weather[0].id))
                             .font(.system(size:55,weight: .regular))
                             .font(Font.title.weight(.light))
                     }
                     Text("\(temp)°")
                         .font(.system(size: 80))
                         .frame(height:70,alignment: .trailing)
-                }
+                }.padding(.vertical,20)
                 HStack{
                     ClothesBtnView(temp: temp, items: clothesViewModel.filterClothes(clothes, temp))
                 }
                 VStack{
-                    Text("바람:\(todayViewModel.toInt(today.wind.speed))km/h")
-                    Text("습도:\(todayViewModel.toInt(today.main.humidity))%")
-                    Text("체감기온:\(todayViewModel.getTemp(temp: today.main.feels_like))")
-                    Text(" 일출:\(todayViewModel.getSunRiseSet(time: today.sys.sunrise))")
-                    Text(" 일몰:\(todayViewModel.getSunRiseSet(time: today.sys.sunset))")
-                }
-               
+                    TodayDetailWeatherView(wind: todayViewModel.toInt(today.wind.speed), humidity: todayViewModel.toInt(today.main.humidity), feelLike: todayViewModel.getTemp(temp: today.main.feels_like), sunRise: todayViewModel.getSunRiseSet(time: today.sys.sunrise), sunSet: todayViewModel.getSunRiseSet(time: today.sys.sunset))
+                }.padding(.bottom,30)
+                
+                
+                
             }
-            .frame(maxWidth: .infinity, maxHeight: 550, alignment: .top)
+            .frame(maxWidth: .infinity, maxHeight: 600, alignment: .top)
             .background(LinearGradient(gradient:Gradient(colors: [Color("custmBlue"),Color("custmMPurple"),Color("custmPurple")]) , startPoint: .topLeading, endPoint: .bottomTrailing))
         }else{
             LoadingView().task {
-               
                 weatherManager.loadToday()
             }
-            
         }
     }
     

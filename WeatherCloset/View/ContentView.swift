@@ -11,12 +11,16 @@ struct ContentView: View {
     @ObservedObject var weatherManager = WeatherManager()
     
     var body: some View {
-            ZStack(alignment: .top){
+        
+            VStack{
                 TodayWeatherView()
-                    .zIndex(1)
+                    
+                 //   .zIndex(1)
                 
-                FivedaysWeatherView()
-            }.frame( maxWidth: .infinity,  maxHeight: .infinity, alignment: .top)
+                FiveDaysWeatherView()
+                    
+            }.frame( maxWidth: .infinity,  maxHeight: .infinity, alignment: .center)
+            
       
     }
     

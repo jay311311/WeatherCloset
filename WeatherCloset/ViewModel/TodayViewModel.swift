@@ -17,17 +17,27 @@ class TodayViewModel{
     }
     
     func getCurrentTime(time :Double) -> String{
-        let current = Date(timeIntervalSince1970: time).toStringKST(dateFormat: "yyyy.MM.dd HH:mm")
+        let current = Date(timeIntervalSince1970: time).toStringKST(dateFormat: "yyyy.MM.dd  HH:mm")
         return current
+    }
+    
+    func getEveryThreeHour(time :Double) -> (date : String, hour:String){
+        let date = Date(timeIntervalSince1970: time).toStringKST(dateFormat: "MM/dd  HH:mm")
+        
+        let time  = date.split(separator: " ")
+        //print("date : \(time[0]), dn : \(time[1]), hour:\(time[2])")
+        let day:String = String(time[0])
+        let hour :String = String(time[1])
+        return (date : day, hour:hour)
     }
     
     func getSunRiseSet(time :Double) -> String{
-        let current = Date(timeIntervalSince1970: time).toStringKST(dateFormat: "a  H:mm")
+        let current = Date(timeIntervalSince1970: time).toStringKST(dateFormat: "a  HH:mm")
         return current
     }
     
-    func getSymbol(weather :[TodayResponse.WeatherResponse]) -> String{
-        switch weather[0].id {
+    func getSymbol(_ todayWeather :Double) -> String{
+        switch todayWeather {
         case 200...299:
             return "cloud.bolt"
         case 300...399:
@@ -54,7 +64,11 @@ class TodayViewModel{
             return "questionmark"
         }
     }
+    func switchId(){
+       
+    }
 }
+
 
 extension Date{
     func toStringKST( dateFormat format: String ) -> String {

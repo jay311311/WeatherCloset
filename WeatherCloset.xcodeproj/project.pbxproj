@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D5BA19C0330062841859007 /* Pods_WeatherCloset.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25EDA481B574FB458B9C0001 /* Pods_WeatherCloset.framework */; };
 		6712E4172838AF8C00E543B2 /* TodayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6712E4162838AF8C00E543B2 /* TodayWeatherView.swift */; };
-		6712E4192838AFF700E543B2 /* FivedaysWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6712E4182838AFF700E543B2 /* FivedaysWeatherView.swift */; };
+		6712E4192838AFF700E543B2 /* FiveDaysWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6712E4182838AFF700E543B2 /* FiveDaysWeatherView.swift */; };
 		6712E41B2838B55900E543B2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6712E41A2838B55900E543B2 /* LoadingView.swift */; };
 		6712E41E2838CECC00E543B2 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6712E41D2838CECC00E543B2 /* TodayViewModel.swift */; };
 		6746B1A6282170EA00E64070 /* WeatherClosetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6746B1A5282170EA00E64070 /* WeatherClosetApp.swift */; };
@@ -20,7 +20,9 @@
 		67673E02283895AF002CCF5F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67673E01283895AF002CCF5F /* Weather.swift */; };
 		6767ACDA283E2F0B0087005E /* ClothesBtnItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6767ACD9283E2F0B0087005E /* ClothesBtnItemView.swift */; };
 		677BA2A52844BD5C003F9E83 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677BA2A42844BD5C003F9E83 /* Location.swift */; };
-		677BA2A9284700A7003F9E83 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677BA2A8284700A7003F9E83 /* ModalView.swift */; };
+		677BA2A9284700A7003F9E83 /* ModalContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677BA2A8284700A7003F9E83 /* ModalContentView.swift */; };
+		677BA2AD2847BDDB003F9E83 /* TodayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677BA2AC2847BDDB003F9E83 /* TodayDetailView.swift */; };
+		677BA2AF2847D03D003F9E83 /* FiveDaysDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677BA2AE2847D03D003F9E83 /* FiveDaysDetailView.swift */; };
 		67A0DBC7283DDDFE002E2317 /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A0DBC6283DDDFE002E2317 /* Recommend.swift */; };
 		67A0DBC9283DFA4F002E2317 /* ClothesBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A0DBC8283DFA4F002E2317 /* ClothesBtnView.swift */; };
 		67A0DBCC283DFCF3002E2317 /* ClothesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 67A0DBCB283DFCF3002E2317 /* ClothesData.json */; };
@@ -30,7 +32,7 @@
 /* Begin PBXFileReference section */
 		25EDA481B574FB458B9C0001 /* Pods_WeatherCloset.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherCloset.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6712E4162838AF8C00E543B2 /* TodayWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherView.swift; sourceTree = "<group>"; };
-		6712E4182838AFF700E543B2 /* FivedaysWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FivedaysWeatherView.swift; sourceTree = "<group>"; };
+		6712E4182838AFF700E543B2 /* FiveDaysWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDaysWeatherView.swift; sourceTree = "<group>"; };
 		6712E41A2838B55900E543B2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		6712E41D2838CECC00E543B2 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		6746B1A2282170EA00E64070 /* WeatherCloset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherCloset.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +45,9 @@
 		6767ACD9283E2F0B0087005E /* ClothesBtnItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesBtnItemView.swift; sourceTree = "<group>"; };
 		677BA2A42844BD5C003F9E83 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		677BA2A728469155003F9E83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		677BA2A8284700A7003F9E83 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		677BA2A8284700A7003F9E83 /* ModalContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalContentView.swift; sourceTree = "<group>"; };
+		677BA2AC2847BDDB003F9E83 /* TodayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailView.swift; sourceTree = "<group>"; };
+		677BA2AE2847D03D003F9E83 /* FiveDaysDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveDaysDetailView.swift; sourceTree = "<group>"; };
 		67A0DBC6283DDDFE002E2317 /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
 		67A0DBC8283DFA4F002E2317 /* ClothesBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesBtnView.swift; sourceTree = "<group>"; };
 		67A0DBCB283DFCF3002E2317 /* ClothesData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ClothesData.json; sourceTree = "<group>"; };
@@ -78,10 +82,12 @@
 				6746B1A7282170EA00E64070 /* ContentView.swift */,
 				67A0DBC8283DFA4F002E2317 /* ClothesBtnView.swift */,
 				6767ACD9283E2F0B0087005E /* ClothesBtnItemView.swift */,
-				677BA2A8284700A7003F9E83 /* ModalView.swift */,
+				677BA2A8284700A7003F9E83 /* ModalContentView.swift */,
 				6712E41A2838B55900E543B2 /* LoadingView.swift */,
 				6712E4162838AF8C00E543B2 /* TodayWeatherView.swift */,
-				6712E4182838AFF700E543B2 /* FivedaysWeatherView.swift */,
+				677BA2AC2847BDDB003F9E83 /* TodayDetailView.swift */,
+				6712E4182838AFF700E543B2 /* FiveDaysWeatherView.swift */,
+				677BA2AE2847D03D003F9E83 /* FiveDaysDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -288,11 +294,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				67673E0028377A5B002CCF5F /* Model.swift in Sources */,
-				6712E4192838AFF700E543B2 /* FivedaysWeatherView.swift in Sources */,
+				6712E4192838AFF700E543B2 /* FiveDaysWeatherView.swift in Sources */,
+				677BA2AF2847D03D003F9E83 /* FiveDaysDetailView.swift in Sources */,
 				6712E4172838AF8C00E543B2 /* TodayWeatherView.swift in Sources */,
 				6746B1A8282170EA00E64070 /* ContentView.swift in Sources */,
-				677BA2A9284700A7003F9E83 /* ModalView.swift in Sources */,
+				677BA2A9284700A7003F9E83 /* ModalContentView.swift in Sources */,
 				6767ACDA283E2F0B0087005E /* ClothesBtnItemView.swift in Sources */,
+				677BA2AD2847BDDB003F9E83 /* TodayDetailView.swift in Sources */,
 				67A0DBC9283DFA4F002E2317 /* ClothesBtnView.swift in Sources */,
 				67A0DBC7283DDDFE002E2317 /* Recommend.swift in Sources */,
 				67673E02283895AF002CCF5F /* Weather.swift in Sources */,

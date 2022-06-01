@@ -29,7 +29,7 @@ class ClothesViewModel:ObservableObject{
             if item.level.contains("VCold"){ VeryCold.append(item) }
         }
         let result = tempStandard(temp)!
-        print("어떻게 만들어 졌니\(result)")
+        //print("어떻게 만들어 졌니\(result)")
         return result
         
     }
