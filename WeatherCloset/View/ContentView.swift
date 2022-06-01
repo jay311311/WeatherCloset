@@ -11,8 +11,6 @@ struct ContentView: View {
     @ObservedObject var weatherManager = WeatherManager()
     
     var body: some View {
-       
-            
             ZStack(alignment: .top){
                 TodayWeatherView()
                     .zIndex(1)

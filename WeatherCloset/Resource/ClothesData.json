@@ -1,22 +1,131 @@
 
 [
-    {"name": "반팔", "icon" : "tshirt", "url":"반팔 url","level":["VHot","Hot"]},
-    {"name": "민소매", "icon" : "sleeveless", "url":"반팔 url","level":["VHot"]},
-    {"name": "반바지", "icon" : "shorts", "url":"반팔 url","level":["VHot"]},
-    {"name": "짧은치마", "icon" : "skirt", "url":"반팔 url","level":["VHot","Hot"]},
-    {"name": "얇은셔츠", "icon" : "summershirt", "url":"반팔 url","level":["Hot"]},
-    {"name": "긴바지", "icon" : "pants", "url":"반팔 url","level":["Hot","LHot","LCold","Cold"]},
-    {"name": "셔츠", "icon" : "shirts", "url":"반팔 url","level":["LHot","Nice","Warm"]},
-    {"name": "긴팔티", "icon" : "longshirt", "url":"반팔 url","level":["LHot","Nice","Warm"]},
-    {"name": "후드/맨투맨", "icon" : "hoodie", "url":"반팔 url","level":["LHot","Nice","Warm"]},
-    {"name": "니트", "icon" : "sweater", "url":"반팔 url","level":["Nice","Warm"]},
-    {"name": "가디건", "icon" : "cardigan", "url":"반팔 url","level":["Warm","LCold"]},
-    {"name": "자켓", "icon" : "suit", "url":"반팔 url","level":["Warm","LCold"]},
-    {"name": "트렌치코드", "icon" : "trench", "url":"반팔 url","level":["LCold"]},
-    {"name": "점퍼", "icon" : "jacket", "url":"반팔 url","level":["LCold"]},
-    {"name": "코트", "icon" : "coat", "url":"반팔 url","level":["Cold","VCold"]},
-    {"name": "조끼", "icon" : "vest", "url":"반팔 url","level":["Cold","VCold"]},
-    {"name": "패딩", "icon" : "padding", "url":"반팔 url","level":["VCold"]},
-    {"name": "겨울용품", "icon" : "scaf", "url":"반팔 url","level":["Cold","VCold"]},
-    {"name": "무스탕", "icon" : "fur", "url":"반팔 url","level":["VCold"]}
+    {
+        "name": "반팔",
+        "icon" : "tshirt",
+        "url":"https://ko.codibook.net/search/?q=%EB%B0%98%ED%8C%94%ED%8B%B0",
+        "level":["VHot","Hot"]
+        
+    },
+    {
+        "name": "민소매",
+        "icon" : "sleeveless",
+        "url":"https://ko.codibook.net/search/?q=%EB%AF%BC%EC%86%8C%EB%A7%A4",
+        "level":["VHot"]
+        
+    },
+    {
+        "name": "반바지",
+        "icon" : "shorts",
+        "url":"https://ko.codibook.net/search/?q=%EB%B0%98%EB%B0%94%EC%A7%80",
+        "level":["VHot"]
+        
+    },
+    {
+        "name": "치마",
+        "icon" : "skirt",
+        "url":"https://ko.codibook.net/search/?q=%EC%B9%98%EB%A7%88",
+        "level":["VHot","Hot"]
+
+    },
+    {
+        "name": "반팔셔츠",
+        "icon" : "summershirt",
+        "url":"https://ko.codibook.net/search/?q=%EB%B0%98%ED%8C%94%EC%85%94%EC%B8%A0",
+        "level":["Hot"]
+        
+    },
+    {
+        "name": "긴바지",
+        "icon" : "pants",
+        "url":"https://ko.codibook.net/search/?q=%EA%B8%B4%EB%B0%94%EC%A7%80",
+        "level":["Hot","LHot","LCold","Cold"]
+        
+    },
+    {
+        "name": "셔츠",
+        "icon" : "shirts",
+        "url":"https://ko.codibook.net/search/?q=%EC%98%A5%EC%8A%A4%ED%8F%AC%EB%93%9C%EC%85%94%EC%B8%A0",
+        "level":["LHot","Nice","Warm"]
+        
+    },
+    {
+        "name": "긴팔티",
+        "icon" : "longshirt",
+        "url":"https://ko.codibook.net/search/?q=%EA%B8%B4%ED%8C%94%ED%8B%B0",
+        "level":["LHot","Nice","Warm"]
+    },
+    {
+        "name": "후드",
+        "icon" : "hoodie",
+        "url":"https://ko.codibook.net/search/?q=%ED%9B%84%EB%93%9C%ED%8B%B0",
+        "level":["LHot","Nice","Warm"]
+        
+    },
+    {
+        "name": "니트",
+        "icon" : "sweater",
+        "url":"https://ko.codibook.net/search/?q=%EA%B8%B4%ED%8C%94%EB%8B%88%ED%8A%B8",
+        "level":["Nice","Warm"]},
+    {
+        "name": "가디건",
+        "icon" : "cardigan",
+        "url":"https://ko.codibook.net/search/?q=%EB%8B%88%ED%8A%B8%EA%B0%80%EB%94%94%EA%B1%B4",
+        "level":["Warm","LCold"]
+        
+    },
+    {
+        "name": "자켓",
+        "icon" : "suit",
+        "url":"https://ko.codibook.net/search/?q=%EB%B8%94%EB%A0%88%EC%9D%B4%EC%A0%80%EC%9E%90%EC%BC%93",
+        "level":["Warm","LCold"]
+        
+    },
+    {
+        "name": "트렌치코드",
+        "icon" : "trench",
+        "url":"https://ko.codibook.net/search/?q=%ED%8A%B8%EB%A0%8C%EC%B9%98%EC%BD%94%ED%8A%B8",
+        "level":["LCold"]
+    },
+    {
+        "name": "점퍼",
+        "icon" : "jacket",
+        "url":"https://ko.codibook.net/search/?q=%EB%A0%88%EB%8D%94%EC%A0%90%ED%8D%BC",
+        "level":["LCold"]
+        
+    },
+    {
+        "name": "코트",
+        "icon" : "coat",
+        "url":"https://ko.codibook.net/search/?q=%EC%9A%B8%EC%BD%94%ED%8A%B8",
+        "level":["Cold","VCold"]
+        
+    },
+    {
+        "name": "조끼",
+        "icon" : "vest",
+        "url":"https://ko.codibook.net/search/?q=%EC%A1%B0%EB%81%BC",
+        "level":["Cold","VCold"]
+    },
+    {
+        "name": "패딩",
+        "icon" : "padding",
+        "url":"https://ko.codibook.net/search/?q=%ED%8C%A8%EB%94%A9",
+        "level":["VCold"]
+        
+    },
+    {
+        "name": "목도리",
+        "icon" : "scaf",
+        "url":"https://ko.codibook.net/search/?q=%EB%AA%A9%EB%8F%84%EB%A6%AC+%EB%A8%B8%ED%94%8C%EB%9F%AC",
+        "level":["Cold","VCold"]
+        
+    },
+    {
+        "name": "무스탕",
+        "icon" : "fur",
+        "url":"https://ko.codibook.net/search/?q=%EB%AC%B4%EC%8A%A4%ED%83%95",
+        "level":["VCold"]
+        
+    }
 ]

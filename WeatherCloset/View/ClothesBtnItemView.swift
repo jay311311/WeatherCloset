@@ -27,7 +27,7 @@ struct ClothesBtnItem: View {
                 
             }
             .sheet(isPresented: self.$showModal) {
-                ModalView()
+                ModalView(urlToLoad: item.url)
             }
             Text("\(item.name)")
                 .font(.subheadline)
