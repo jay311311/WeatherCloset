@@ -5,7 +5,7 @@
     {"name": "반바지", "icon" : "shorts", "url":"반팔 url","level":["VHot"]},
     {"name": "짧은치마", "icon" : "skirt", "url":"반팔 url","level":["VHot","Hot"]},
     {"name": "얇은셔츠", "icon" : "summershirt", "url":"반팔 url","level":["Hot"]},
-    {"name": "긴바지", "icon" : "pants", "url":"반팔 url","level":["Hot","LHot","Nice","Warm","LCold","Cold"]},
+    {"name": "긴바지", "icon" : "pants", "url":"반팔 url","level":["Hot","LHot","LCold","Cold"]},
     {"name": "셔츠", "icon" : "shirts", "url":"반팔 url","level":["LHot","Nice","Warm"]},
     {"name": "긴팔티", "icon" : "longshirt", "url":"반팔 url","level":["LHot","Nice","Warm"]},
     {"name": "후드/맨투맨", "icon" : "hoodie", "url":"반팔 url","level":["LHot","Nice","Warm"]},
