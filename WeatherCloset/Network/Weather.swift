@@ -44,7 +44,7 @@ class WeatherManager:ObservableObject {
                     let result = try JSONDecoder().decode(FiveDaysResponse.self, from: data)
                     DispatchQueue.main.async { [weak self] in
                         self?.fivedaysResponse = [result]
-                        print(self?.fivedaysResponse?.first)
+                       // print(self?.fivedaysResponse?.first)
                     }
                 }
             } catch {

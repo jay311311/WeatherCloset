@@ -9,29 +9,26 @@ import SwiftUI
 import WebKit
 
 
-struct ModalView: UIViewRepresentable  {
+struct ModalView: UIViewRepresentable {
     var urlToLoad: String
     @Binding var isPresented: Bool
     
-    let webview = WKWebView()
+    var webview = WKWebView()
+
     
-    
+ 
     func makeUIView(context: Context) -> WKWebView {
+       
         guard let url = URL(string: self.urlToLoad) else {
             return WKWebView()
         }
-        print("실행:\(isPresented)")
+      
         if  isPresented {
-        
+          webview.allowsBackForwardNavigationGestures = true
+            webview.load(URLRequest(url: url))
             
-            self.webview.load(URLRequest(url: url))
+                    }else{
             
-        
-        }else {
-            print("끝남")
-            DispatchQueue.main.async {
-                self.webview.stopLoading()
-            }
         }
         
         return webview
@@ -41,9 +38,15 @@ struct ModalView: UIViewRepresentable  {
         
     }
     
-    
-    
-}
+
+    mutating func dismantleUIView(_ uiView: WKWebView, coordinator: ()) {
+        webview.stopLoading()
+        webview.removeFromSuperview()
+        print("나가니?")
+    }
+    }
+
+
 
 struct ModalContentView_Previews: PreviewProvider {
     static var previews: some View {

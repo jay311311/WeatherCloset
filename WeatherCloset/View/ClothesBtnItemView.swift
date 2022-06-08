@@ -13,7 +13,9 @@ struct ClothesBtnItem: View {
     
     var body: some View {
         VStack(alignment: .center){
-            Button(action: { self.showModal = true}) {
+            Button(action: { self.showModal = true
+                print(showModal)
+            }) {
                 Image("\(item.icon)")
                     .resizable()
                     .frame(width:40, height: 40, alignment: .center)
@@ -27,11 +29,8 @@ struct ClothesBtnItem: View {
                 
             }
             .sheet(isPresented: self.$showModal, onDismiss: {
-                // 에러 수정예정
-//                didMiss
-//                self.showModal = false
-//                print("이제뭐니?: \(showModal)"
-//                )
+                showModal = false
+                print(showModal)
             }) {
                 ModalView(urlToLoad: item.url, isPresented: $showModal)
             }
