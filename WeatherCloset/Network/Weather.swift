@@ -4,7 +4,7 @@
 //
 //  Created by Jooeun Kim on 2022/05/21.
 //
-
+import Alamofire
 import Foundation
 import CoreLocation
 
@@ -19,38 +19,72 @@ class WeatherManager:ObservableObject {
     func loadFiveDays() {
         guard let latitude = lat , let longitude = long else { return }
         loadData(url:"https://api.openweathermap.org/data/2.5/forecast?lat=\(latitude)&lon=\(longitude)&appid=e71e68187e6da07eb17db48a8cf2dc1b&units=metric&cnt=24")
-
+        
     }
     
     func loadToday(){
         guard let latitude = lat , let longitude = long else { return }
-//        print("lat : \(coordnate.latitude), long : \(coordnate.longitude)")
+        //        print("lat : \(coordnate.latitude), long : \(coordnate.longitude)")
         loadData(url:"https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=e71e68187e6da07eb17db48a8cf2dc1b&units=metric")
     }
     
     func loadData(url:String ){
         guard  let url = URL(string: url) else { return }
-        URLSession.shared.dataTask(with: url) { data, _, _ in
-            guard let data = data else { return }
-            
-            do {
-                if url.pathComponents.contains("weather"){
-                    let result = try JSONDecoder().decode(TodayResponse.self, from: data)
-                    DispatchQueue.main.async { [weak self] in
-                        self?.todaysResponse = [result]
+        //  Alamofire
+        AF.request(url, method: .get)
+            .validate(statusCode: 200..<500)
+            .responseJSON{ response  in
+                switch response.result{
+                case  .success(let data):
+                    do  {   // guard let reponseValue = response.value  else { return }
+                        
+                        print("여기까지 되니?0")
+                        let dataJson  =  try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+                        print("여기까지 되니?1")
+                        
+                        if url.pathComponents.contains("weather"){
+                            let result  =  try JSONDecoder().decode(TodayResponse.self, from: dataJson)
+                            
+                            self.todaysResponse = [result]
+                        }else if url.pathComponents.contains("forecast") {
+                            let result = try JSONDecoder().decode(FiveDaysResponse.self, from: dataJson)
+                            self.fivedaysResponse = [result]
+                        }
+                        
+                    }catch {
+                        print(response.error)
                     }
+                    
+                    
+                case .failure(_): break
+                    
                 }
-                if url.pathComponents.contains("forecast"){
-                    let result = try JSONDecoder().decode(FiveDaysResponse.self, from: data)
-                    DispatchQueue.main.async { [weak self] in
-                        self?.fivedaysResponse = [result]
-                       // print(self?.fivedaysResponse?.first)
-                    }
-                }
-            } catch {
-                print("하하하\(error.localizedDescription)\n\(error)")
+                
             }
-        }.resume()
+        //  Alamofire
+        
+        
+        //        URLSession.shared.dataTask(with: url) { data, _, _ in
+        //            guard let data = data else { return }
+        //
+        //            do {
+        //                if url.pathComponents.contains("weather"){
+        //                    let result = try JSONDecoder().decode(TodayResponse.self, from: data)
+        //                    DispatchQueue.main.async { [weak self] in
+        //                        self?.todaysResponse = [result]
+        //                    }
+        //                }
+        //                if url.pathComponents.contains("forecast"){
+        //                    let result = try JSONDecoder().decode(FiveDaysResponse.self, from: data)
+        //                    DispatchQueue.main.async { [weak self] in
+        //                        self?.fivedaysResponse = [result]
+        //                       // print(self?.fivedaysResponse?.first)
+        //                    }
+        //                }
+        //            } catch {
+        //                print("하하하\(error.localizedDescription)\n\(error)")
+        //            }
+        //        }.resume()
     }
 }
 
