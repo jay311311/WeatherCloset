@@ -1,10 +1,3 @@
-//
-//  ModalView.swift
-//  WeatherCloset
-//
-//  Created by Jooeun Kim on 2022/06/01.
-//
-
 import SwiftUI
 import WebKit
 
@@ -14,8 +7,6 @@ struct ModalView: UIViewRepresentable {
     @Binding var isPresented: Bool
     
     var webview = WKWebView()
-
-    
  
     func makeUIView(context: Context) -> WKWebView {
        

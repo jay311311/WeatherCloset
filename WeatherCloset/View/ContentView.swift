@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  WeatherCloset
-//
-//  Created by Jooeun Kim on 2022/05/03.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -14,12 +7,15 @@ struct ContentView: View {
         
             VStack{
                 TodayWeatherView()
+                    .frame( alignment: .center)
                     
                  //   .zIndex(1)
                 
                 FiveDaysWeatherView()
+                    .frame( alignment: .top)
+                
                     
-            }.frame( maxWidth: .infinity,  maxHeight: .infinity, alignment: .center)
+            }.frame( maxWidth: .infinity,  maxHeight: .infinity)
             
       
     }

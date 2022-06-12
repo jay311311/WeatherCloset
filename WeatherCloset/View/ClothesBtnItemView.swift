@@ -1,10 +1,3 @@
-//
-//  ClothesBtnItem.swift
-//  WeatherCloset
-//
-//  Created by Jooeun Kim on 2022/05/25.
-//
-
 import SwiftUI
 
 struct ClothesBtnItem: View {

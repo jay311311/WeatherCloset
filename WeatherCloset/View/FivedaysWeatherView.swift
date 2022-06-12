@@ -1,10 +1,3 @@
-//
-//  FivedaysWeather.swift
-//  WeatherCloset
-//
-//  Created by Jooeun Kim on 2022/05/21.
-//
-
 import SwiftUI
 
 struct FiveDaysWeatherView: View {
@@ -12,8 +5,8 @@ struct FiveDaysWeatherView: View {
     var body: some View {
         if let fiveday = fivedayManager.fivedaysResponse?.first?.list{
             VStack{
-                HStack(alignment: .lastTextBaseline, spacing: 200){
-                    Text("5일 날씨")
+                HStack(alignment: .lastTextBaseline, spacing: 180){
+                    Text("5일 동안 날씨")
                     Text("* 3시간 기준")
                 }
                 ScrollView(.horizontal,showsIndicators: false){
@@ -24,10 +17,10 @@ struct FiveDaysWeatherView: View {
                         }
                     }
                 }
+                .padding(.horizontal, 20)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.horizontal, 20)
-            
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .padding(.top, 20)
         }else{
             LoadingView().task {
                 fivedayManager.loadFiveDays()

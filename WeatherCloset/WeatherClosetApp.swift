@@ -1,10 +1,3 @@
-//
-//  WeatherClosetApp.swift
-//  WeatherCloset
-//
-//  Created by Jooeun Kim on 2022/05/03.
-//
-
 import SwiftUI
 
 @main

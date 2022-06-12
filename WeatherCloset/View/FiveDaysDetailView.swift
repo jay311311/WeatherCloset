@@ -1,10 +1,3 @@
-//
-//  FiveDaysDetailView.swift
-//  WeatherCloset
-//
-//  Created by Jooeun Kim on 2022/06/02.
-//
-
 import SwiftUI
 
 struct FiveDaysDetailView: View {
@@ -14,8 +7,13 @@ struct FiveDaysDetailView: View {
     var body: some View {
         VStack{
             Text("\(fivedayViewModel.getEveryThreeHour(time: fiveday.dt).date)")
+                .font(.caption)
             Text("\(fivedayViewModel.getEveryThreeHour(time: fiveday.dt).hour)")
+                .font(.subheadline)
             Image(systemName: fivedayViewModel.getSymbol(fiveday.weather[0].id))
+                .padding(.top, 1)
+                .font(.headline)
+            Text("\(fivedayViewModel.getTemp(temp: fiveday.main.temp))°")
         }
     }
 }

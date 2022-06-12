@@ -24,7 +24,6 @@ class WeatherManager:ObservableObject {
     
     func loadToday(){
         guard let latitude = lat , let longitude = long else { return }
-        //        print("lat : \(coordnate.latitude), long : \(coordnate.longitude)")
         loadData(url:"https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=e71e68187e6da07eb17db48a8cf2dc1b&units=metric")
     }
     
@@ -38,15 +37,15 @@ class WeatherManager:ObservableObject {
                 case  .success(let data):
                     do  {   // guard let reponseValue = response.value  else { return }
                         
-                        print("여기까지 되니?0")
                         let dataJson  =  try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-                        print("여기까지 되니?1")
                         
                         if url.pathComponents.contains("weather"){
+                            print("여기까지 되니?0")
                             let result  =  try JSONDecoder().decode(TodayResponse.self, from: dataJson)
                             
                             self.todaysResponse = [result]
                         }else if url.pathComponents.contains("forecast") {
+                            print("여기까지 되니?1")
                             let result = try JSONDecoder().decode(FiveDaysResponse.self, from: dataJson)
                             self.fivedaysResponse = [result]
                         }

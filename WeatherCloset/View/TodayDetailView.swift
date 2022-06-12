@@ -1,10 +1,3 @@
-//
-//  TodayDetailWeatherView.swift
-//  WeatherCloset
-//
-//  Created by Jooeun Kim on 2022/06/02.
-//
-
 import SwiftUI
 
 struct TodayDetailWeatherView: View {
@@ -22,26 +15,42 @@ struct TodayDetailWeatherView: View {
                     .font(.headline)
                     .opacity(0.8)
                 Text("\(wind) km/h")
-                    .font(.headline)
+                    .font(.subheadline)
                     .fontWeight(.semibold)
             }
         VStack(spacing:10){
             Text("체감온도")
                 .fontWeight(.light)
+                .font(.headline)
+                .opacity(0.8)
             Text("\(feelLike)°")
+                .font(.subheadline)
+                .fontWeight(.semibold)
         }
         VStack(spacing:10){
             Text("습도")
                 .fontWeight(.light)
+                .font(.headline)
+                .opacity(0.8)
             Text("\(humidity)%")
+                .font(.subheadline)
+                .fontWeight(.semibold)
         }
         VStack(spacing:10){
             Text("일출&일몰")
                 .fontWeight(.light)
+                .font(.headline)
+                .opacity(0.8)
             VStack{
+                
             Text("\(sunRise)")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
             Text("\(sunSet)")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
             }
+            
         }
         }
     }

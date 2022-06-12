@@ -1,10 +1,3 @@
-//
-//  currentWeather.swift
-//  WeatherCloset
-//
-//  Created by Jooeun Kim on 2022/05/21.
-//
-
 import SwiftUI
 
 struct TodayWeatherView: View {
